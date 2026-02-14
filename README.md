@@ -6,6 +6,8 @@ A SwiftUI-based iOS application that replicates the core video feed experience o
 
 This demo app showcases a vertical video feed with full-screen videos that users can scroll through, similar to TikTok's main feed. Each video plays automatically when visible, pauses when scrolling away, and includes interactive elements like likes, double-tap animations, and tap-to-pause functionality.
 
+<img src="Tiktok/Images/preview-image.png" alt="preview" width="300">
+
 ## Architecture
 
 ### Core Components
