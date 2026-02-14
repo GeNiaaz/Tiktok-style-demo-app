@@ -47,7 +47,6 @@ Individual video cell component that represents a single video in the feed.
 - `handleSingleTap()`: Toggles play/pause state
 - `handleDoubleTap()`: Triggers like action and shows heart animation
 - `handleVisibilityChange()`: Manages playback based on visibility
-  - ⚠️ **Note**: Currently contains `player.seek(to: .zero)` which causes videos to restart. Remove this line to enable pause/resume behavior.
 
 #### 4. **VideoPlayerManager.swift**
 Observable class that manages video playback and player lifecycle.
@@ -123,19 +122,6 @@ Contains 12 sample videos from Mixkit (free video library) for demonstration pur
 - Player caching system
 - Preloading nearby videos (configurable)
 - Cleanup of distant players to manage memory
-
-## Known Issues
-
-### Video Restart on Scroll
-**Issue**: When scrolling halfway to the next video and returning, the video restarts from the beginning instead of resuming.
-
-**Cause**: In `VideoCellView.swift`, the `handleVisibilityChange(_:)` function calls `player.seek(to: .zero)` when a video becomes visible.
-
-**Fix**: Remove line 197 in `VideoCellView.swift`:
-```swift
-// Remove this line:
-player.seek(to: .zero)
-```
 
 ## Future Enhancements
 
